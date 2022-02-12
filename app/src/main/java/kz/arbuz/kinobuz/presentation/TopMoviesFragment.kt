@@ -20,8 +20,9 @@ class TopMoviesFragment: Fragment(R.layout.fragment_top_movies) {
         super.onViewCreated(view, savedInstanceState)
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.movie_list)
-        val adapter = MovieAdapter(this)
+        val adapter = MovieAdapter(moviesList)
         recyclerView.adapter = adapter
+        moviesViewModel.getMovies()
 
         moviesViewModel.top250Movies.observe(this) {
             moviesList.clear()

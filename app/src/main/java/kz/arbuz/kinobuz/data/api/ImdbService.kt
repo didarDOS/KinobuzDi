@@ -1,6 +1,7 @@
 package kz.arbuz.kinobuz.data.api
 
 import kz.arbuz.kinobuz.data.entity.ApiMovie
+import kz.arbuz.kinobuz.domain.entity.MovieListResponse
 import retrofit2.http.GET
 
 /**
@@ -11,6 +12,6 @@ import retrofit2.http.GET
  */
 interface ImdbService {
 
-    @GET("ru/API/Top250Movies/")
-    suspend fun getMovies(): List<ApiMovie>
+    @GET("ru/API/Top250Movies/k_q9j211h2/")
+    suspend fun getMovies(): MovieListResponse
 }

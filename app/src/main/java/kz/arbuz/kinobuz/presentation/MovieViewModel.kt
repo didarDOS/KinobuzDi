@@ -19,7 +19,7 @@ class MovieViewModel(
 
     fun getMovies() {
         viewModelScope.launch(Dispatchers.IO) {
-            _top250Movies.value = getTop250MoviesUseCase.invoke()
+            _top250Movies.postValue(getTop250MoviesUseCase.invoke())
         }
     }
 }

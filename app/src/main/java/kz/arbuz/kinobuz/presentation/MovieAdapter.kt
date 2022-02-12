@@ -11,10 +11,10 @@ import kz.arbuz.kinobuz.data.entity.ApiMovie
 import kz.arbuz.kinobuz.R
 
 class MovieAdapter(
-    private val fragment: TopMoviesFragment
+    private val list: List<ApiMovie>
 ): RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
-    private val items get() = fragment.moviesList
+    private val items get() = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_item_movie, parent, false))
